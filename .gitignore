@@ -1,0 +1,6 @@
+*.html
+.idea/
+*.pyc
+*.log
+*.iml
+venv/

@@ -1,0 +1,3 @@
+- linux 环境：
+    - 将chromedriver_linux64 内的chromedriver放到 /usr/bin 目录下，并赋予可执行权限；
+- 需要其他版本的 [chromedriver 请点击]（https://npm.taobao.org/mirrors/chromedriver）；

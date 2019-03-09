@@ -1,0 +1,16 @@
+COMMENT,VAR,HKPROD,CNPROD
+,url,https://www.uniqlo.com.hk/pc/zh_HK/,https://www.uniqlo.cn/
+,url_login,https://www.uniqlo.com.hk/pc/zh_HK/login.html,https://www.uniqlo.cn/login.html
+,phone,+8618405735109,18405735109
+,password,111111,111111
+请求接口的语言,language,zh_HK,zh_CN
+语言切换-before,lan_before,繁體中文,-
+语言切换-after,lan_after,ENGLISH,-
+登录页,login_title_en,LOG IN,-
+,login_title,登入,登录
+搜索浮层,recent_search,最近搜尋,最近搜索
+,delete_all,刪除全部,删除全部
+,hot_search,熱門搜尋,热门搜索
+,wish_list,收藏夾,收藏夹
+,shopping_cart,購物車,购物车
+,log_out,登出,退出

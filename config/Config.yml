@@ -1,0 +1,21 @@
+log:
+  file_name: test.log      # 输出日志文件名
+  backup: 20               # 备份数量
+  level: INFO
+  console_level: INFO # 控制台输出等级
+  file_level: DEBUG      # 文件输出等级
+  pattern: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'  # 打印输出格式
+
+mail:
+  mail_server: smtp.163.com
+  mail_user: lfw_dar@163.com
+  mail_pwd: 
+  mail_port: 25
+  sender: lfw_dar@163.com
+  receiver: 18405735109@163.com
+  subject: 测试
+  content: 详细信息请查看附件
+  testuser: fw
+  debuglevel: 1
+
+report:
