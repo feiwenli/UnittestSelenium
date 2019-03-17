@@ -3,6 +3,7 @@
 import time
 import unittest
 
+from BeautifulReport import BeautifulReport
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -19,8 +20,10 @@ class Login(BaseTest):
     def setUp(self):
         super(Login, self).setUp()
 
+    @BeautifulReport.add_test_img(time.strftime("%Y%m%d%H%M", time.localtime()) + 'pic.png')
     @unittest.skipIf(ENV == 'CNPROD' or PLATFORM == 'H5', 'run test for %s and %s' %(ENV, PLATFORM))
     def test_loginByPassword(self):
+        '''用户名密码登录'''
 
         self.url_login = self.test_data.get('url_login')
         driver = self.driver
@@ -46,6 +49,7 @@ class Login(BaseTest):
 
     @unittest.skipIf(PLATFORM == 'PC', 'run test for %s and %s' %(ENV, PLATFORM))
     def test_setStorage(self):
+        '''H5免用户名密码登录'''
 
         super().setStorage()
         WebDriverWait(self.driver, 10, 1).until(EC.invisibility_of_element_located((
@@ -57,6 +61,7 @@ class Login(BaseTest):
 
     @unittest.skipIf(ENV == 'HKPROD' or PLATFORM == 'H5', 'run test for %s and %s' %(ENV, PLATFORM))
     def test_setCookies(self):
+        '''PC免用户名密码登录'''
 
         super().setCookies()
         WebDriverWait(self.driver, 10, 1).until(EC.invisibility_of_element_located((
@@ -69,16 +74,16 @@ class Login(BaseTest):
         super().tearDown()
 
 
-# if __name__ == '__main__':
-#     # unittest.main() # 按case的名称执行
+if __name__ == '__main__':
+    # unittest.main() # 按case的名称执行
 
-#     # 构造测试集
-#     suite = unittest.TestSuite()
-#     suite.addTest(Login("test_loginByPassword"))
-#     suite.addTest(Login("test_setStorage"))
-#     suite.addTest(Login("test_setCookies"))
+    # 构造测试集
+    suite = unittest.TestSuite()
+    suite.addTest(Login("test_loginByPassword"))
+    suite.addTest(Login("test_setStorage"))
+    suite.addTest(Login("test_setCookies"))
 
 
-#     # 执行
-#     runner = unittest.TextTestRunner()
-#     runner.run(suite)
+    # 执行
+    runner = unittest.TextTestRunner()
+    runner.run(suite)

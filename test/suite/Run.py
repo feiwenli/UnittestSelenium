@@ -9,6 +9,9 @@ from utils.config import REPORT_PATH, CASE_PATH
 from utils.mail import Mail
 from utils.log import Logger
 
+from BeautifulReport import BeautifulReport
+
+# BeautifulReport Git https://github.com/TesterlifeRaymond/BeautifulReport
 logger = Logger(__name__).get()
 
 
@@ -24,6 +27,10 @@ class MSuit:
         logger.info('run suits success')
         fp.close()
         logger.info(self.report_name+' is closed.')
+
+        result = BeautifulReport(self.suites)
+        result.report(filename=self.report_name, description='测试deafult报告', log_path='report')
+
         # 发邮件
         Mail(self.report_name).send()
 

@@ -47,7 +47,7 @@ class ReadCsv:
 
     @property
     def data(self):
-        with open(self.csv_path, 'r') as f:
+        with open(self.csv_path, 'r', encoding='utf-8') as f:
             reader = csv.reader(f)  # 可迭代对象
             # 读取第一行，判断环境
             head_row = next(reader)
